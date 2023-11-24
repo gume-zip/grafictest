@@ -5,6 +5,9 @@
  */
 package visão;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Geral
@@ -36,13 +39,28 @@ public class Exemplo4 extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jCkbIngles.setText("Inglês");
+        jCkbIngles.setText("Java");
+        jCkbIngles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCkbInglesActionPerformed(evt);
+            }
+        });
 
-        jCkbInformatica.setText("Informatica");
+        jCkbInformatica.setText("Banco de dados");
+        jCkbInformatica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCkbInformaticaActionPerformed(evt);
+            }
+        });
 
         jBtnVerificar.setText("Verificar");
+        jBtnVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnVerificarActionPerformed(evt);
+            }
+        });
 
         jBtnMarcar.setText("Marcar");
         jBtnMarcar.addActionListener(new java.awt.event.ActionListener() {
@@ -73,12 +91,12 @@ public class Exemplo4 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(104, 104, 104)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBtnDesmarcar, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                    .addComponent(jBtnDesmarcar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBtnVerificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBtnMarcar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jCkbInformatica)
                     .addComponent(jCkbIngles))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,6 +126,29 @@ public class Exemplo4 extends javax.swing.JFrame {
         jCkbInformatica.setSelected(false);
         jCkbIngles.setSelected(false);
     }//GEN-LAST:event_jBtnDesmarcarActionPerformed
+
+    private void jBtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnVerificarActionPerformed
+        String selecao = "Selecionados: ";
+        if (jCkbIngles.isSelected()){
+            selecao+="\n"+jCkbIngles.getText();
+        }
+        if (jCkbInformatica.isSelected()){
+            selecao+="\n"+jCkbInformatica.getText();
+        }
+        if(!jCkbIngles.isSelected()&&!jCkbInformatica.isSelected()){
+            JOptionPane.showMessageDialog(null, "Nenhum Curso selecionado!");
+        }else{
+        JOptionPane.showConfirmDialog(null, selecao);
+        }
+    }//GEN-LAST:event_jBtnVerificarActionPerformed
+
+    private void jCkbInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCkbInglesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCkbInglesActionPerformed
+
+    private void jCkbInformaticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCkbInformaticaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCkbInformaticaActionPerformed
 
     /**
      * @param args the command line arguments

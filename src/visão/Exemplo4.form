@@ -18,7 +18,7 @@
     </Menu>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -43,13 +43,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jBtnDesmarcar" pref="91" max="32767" attributes="0"/>
+                  <Component id="jBtnDesmarcar" max="32767" attributes="0"/>
                   <Component id="jBtnVerificar" max="32767" attributes="0"/>
                   <Component id="jBtnMarcar" max="32767" attributes="0"/>
                   <Component id="jCkbInformatica" min="-2" max="-2" attributes="0"/>
                   <Component id="jCkbIngles" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="183" max="32767" attributes="0"/>
+              <EmptySpace pref="173" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,18 +74,27 @@
   <SubComponents>
     <Component class="javax.swing.JCheckBox" name="jCkbIngles">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ingl&#xea;s"/>
+        <Property name="text" type="java.lang.String" value="Java"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCkbInglesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCkbInformatica">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Informatica"/>
+        <Property name="text" type="java.lang.String" value="Banco de dados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCkbInformaticaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBtnVerificar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnVerificarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBtnMarcar">
       <Properties>
