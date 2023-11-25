@@ -31,6 +31,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         arquivo = new javax.swing.JMenu();
         jIdmExemplo3 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         Sobre = new javax.swing.JMenu();
         sair = new javax.swing.JMenu();
 
@@ -59,6 +60,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         arquivo.add(jMenuItem1);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_5, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("Exemplo5");
+        jMenuItem2.setToolTipText("");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        arquivo.add(jMenuItem2);
 
         jMenuBar1.add(arquivo);
 
@@ -107,6 +118,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         exe4.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       Exemplo5 exe5 = new Exemplo5();
+       exe5.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -148,6 +164,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jIdmExemplo3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu sair;
     // End of variables declaration//GEN-END:variables
 }
