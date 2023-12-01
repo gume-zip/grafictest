@@ -5,6 +5,8 @@
  */
 package visão;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Geral
@@ -27,21 +29,119 @@ public class Exemplo7 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jTxtValor = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListDesconto = new javax.swing.JList<>();
+        jTxtResutado = new javax.swing.JTextField();
+        jBtnCalcular = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jTxtValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtValorActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Valor");
+
+        jListDesconto.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "10%", "20%", "30%", "40%", "50%" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jListDesconto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(jListDesconto);
+
+        jTxtResutado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtResutadoActionPerformed(evt);
+            }
+        });
+
+        jBtnCalcular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-calculadora-60.png"))); // NOI18N
+        jBtnCalcular.setText("Calcular");
+        jBtnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCalcularActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTxtResutado)
+                        .addComponent(jTxtValor)
+                        .addComponent(jLabel1)
+                        .addComponent(jBtnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jTxtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTxtResutado, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jBtnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTxtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtValorActionPerformed
+
+    private void jTxtResutadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtResutadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtResutadoActionPerformed
+
+    private void jBtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCalcularActionPerformed
+        if(jTxtValor.getText().equals("")){
+            jTxtValor.requestFocus();
+            return;
+        }
+        try {
+            
+            float valor = Float.parseFloat(jTxtValor.getText());
+            if(jListDesconto.getSelectedIndex()== -1){
+                JOptionPane.showMessageDialog(null, "Selecione um Desconto da Lista!");
+            }
+            float pDesconto = 0.9f;
+            if(jListDesconto.getSelectedIndex()== 0){
+                pDesconto=0.9f;
+            }
+            if(jListDesconto.getSelectedIndex()== 1){
+                pDesconto=0.8f;
+            }
+            if(jListDesconto.getSelectedIndex()== 2){
+                pDesconto=0.7f;
+            }
+            if(jListDesconto.getSelectedIndex()== 3){
+                pDesconto=0.6f;
+            }
+            if(jListDesconto.getSelectedIndex()== 4){
+                pDesconto=0.5f;
+            }
+            jTxtResutado.setText(""+valor*pDesconto);
+        } catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event_jBtnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +179,11 @@ public class Exemplo7 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<String> jListDesconto;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTxtResutado;
+    private javax.swing.JTextField jTxtValor;
     // End of variables declaration//GEN-END:variables
 }
